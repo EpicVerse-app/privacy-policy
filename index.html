@@ -3,228 +3,549 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EpicVerse Privacy Policy</title>
+  <title>EpicVerse — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --ink: #1a1a2e;
+      --muted: #5a5a7a;
+      --accent: #4f46e5;
+      --accent-light: #eef2ff;
+      --border: #e2e4f0;
+      --surface: #f8f8fc;
+      --white: #ffffff;
+      --success: #065f46;
+      --success-bg: #ecfdf5;
+      --warning-bg: #fffbeb;
+      --warning: #92400e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.7;
-      color: #24292f;
-      max-width: 800px;
+      font-family: 'Sora', sans-serif;
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .page-wrap {
+      max-width: 780px;
       margin: 0 auto;
-      padding: 40px 24px;
-      background: #ffffff;
+      padding: 0 24px 80px;
     }
-    h1.title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 4px;
+
+    /* ── Hero ── */
+    .hero {
       text-align: center;
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
     }
-    .subtitle {
-      font-size: 1.25rem;
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12px;
       font-weight: 600;
-      color: #57606a;
-      margin-top: 0;
-      margin-bottom: 4px;
-      text-align: center;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
     }
-    .effective-date {
-      color: #57606a;
-      font-size: 0.9rem;
-      margin-bottom: 32px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 1.3rem;
+    .hero h1 {
+      font-size: 2.4rem;
       font-weight: 700;
-      margin-top: 40px;
+      line-height: 1.2;
       margin-bottom: 12px;
     }
-    h3 {
-      font-size: 1.05rem;
+    .hero-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .hero-meta span { margin: 0 6px; opacity: 0.4; }
+
+    /* ── Data Safety Card (store highlight) ── */
+    .data-safety {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+    .data-safety h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .safety-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .safety-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+    .safety-icon.green { background: var(--success-bg); color: var(--success); }
+    .safety-icon.amber { background: var(--warning-bg); color: var(--warning); }
+    .safety-label { font-size: 13px; font-weight: 600; line-height: 1.3; }
+    .safety-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── Section ── */
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+    .section-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .section h3 {
+      font-size: 0.95rem;
       font-weight: 600;
-      margin-top: 24px;
-      margin-bottom: 8px;
-      color: #24292f;
+      color: var(--ink);
+      margin: 24px 0 10px;
     }
-    p {
-      margin-top: 0;
-      margin-bottom: 16px;
-    }
+    .section h3:first-of-type { margin-top: 8px; }
+
+    p { margin-bottom: 14px; font-size: 15px; color: #2e2e4a; }
+    p:last-child { margin-bottom: 0; }
+
     ul {
-      padding-left: 24px;
-      margin-bottom: 16px;
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 14px;
     }
-    li {
-      margin-bottom: 8px;
+    ul li {
+      font-size: 15px;
+      color: #2e2e4a;
+      padding: 8px 0 8px 28px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
     }
-    a {
-      color: #0969da;
-      text-decoration: none;
+    ul li:last-child { border-bottom: none; }
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 18px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.5;
     }
-    a:hover {
-      text-decoration: underline;
+    strong { font-weight: 600; color: var(--ink); }
+
+    /* ── Inline notice boxes ── */
+    .notice {
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 14px;
+      margin: 16px 0;
+      line-height: 1.6;
     }
+    .notice.info { background: var(--accent-light); color: #3730a3; border-left: 3px solid var(--accent); }
+    .notice.warn { background: var(--warning-bg); color: var(--warning); border-left: 3px solid #f59e0b; }
+
+    /* ── Permissions table ── */
+    .perm-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    .perm-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .perm-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: #2e2e4a;
+    }
+    .perm-table tr:last-child td { border-bottom: none; }
+    .perm-table td:first-child { font-weight: 600; white-space: nowrap; color: var(--ink); }
+
+    /* ── Rights grid ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .right-card .right-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .right-card .right-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ── Contact block ── */
     .contact-block {
-      background: #f6f8fa;
-      border: 1px solid #d0d7de;
-      border-radius: 6px;
-      padding: 16px 20px;
-      margin-top: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
     }
-    .contact-block p {
-      margin: 4px 0;
-    }
+    .contact-block p { font-size: 14px; margin-bottom: 6px; }
+    .contact-block a { color: var(--accent); text-decoration: none; }
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
     footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
       margin-top: 48px;
-      padding-top: 16px;
-      border-top: 1px solid #d0d7de;
-      color: #57606a;
-      font-size: 0.875rem;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
     }
   </style>
 </head>
 <body>
+<div class="page-wrap">
 
-  <h1 class="title">EpicVerse</h1>
-  <p class="subtitle">Privacy Policy</p>
-  <p class="effective-date">Effective Date: May 7, 2026</p>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">Privacy Policy</div>
+    <h1>EpicVerse by Kriyora</h1>
+    <p class="hero-meta">
+      Effective Date: May 7, 2026
+      <span>|</span>
+      Available on Google Play &amp; App Store
+      <span>|</span>
+      Version 1.1
+    </p>
+  </div>
 
-  <h2>1. Introduction</h2>
-  <p>
-    Welcome to EpicVerse, developed by Kriyora ("we", "our", or "us"). This Privacy Policy describes how we collect,
-    use, disclose, and protect your personal information when you use the EpicVerse mobile application (the "App"),
-    available on the Google Play Store and Apple App Store.
-  </p>
-  <p>
-    By downloading or using EpicVerse, you agree to the terms of this Privacy Policy. If you do not agree, please
-    do not use the App.
-  </p>
+  <!-- Data Safety Summary (for store compliance) -->
+  <div class="data-safety">
+    <h2>📋 Data Safety Summary</h2>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:20px;">A quick overview designed for Google Play's Data Safety section and Apple's Privacy Nutrition Label.</p>
+    <div class="safety-grid">
+      <div class="safety-item">
+        <div class="safety-icon green">✓</div>
+        <div>
+          <div class="safety-label">No data sold</div>
+          <div class="safety-sub">We never sell personal information to third parties</div>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon green">✓</div>
+        <div>
+          <div class="safety-label">No cross-app tracking</div>
+          <div class="safety-sub">No advertising or cross-app tracking of any kind</div>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon green">✓</div>
+        <div>
+          <div class="safety-label">Encrypted in transit &amp; at rest</div>
+          <div class="safety-sub">HTTPS/TLS for all data; Firebase security rules enforced</div>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon green">✓</div>
+        <div>
+          <div class="safety-label">Voice not stored</div>
+          <div class="safety-sub">Voice data processed in real-time by OpenAI and immediately discarded</div>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon amber">!</div>
+        <div>
+          <div class="safety-label">Voice sent to OpenAI</div>
+          <div class="safety-sub">Only when you actively use the voice companion feature</div>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon green">✓</div>
+        <div>
+          <div class="safety-label">Data deletion on request</div>
+          <div class="safety-sub">Responded to within 30 days</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <h2>2. Information We Collect</h2>
+  <!-- 1. Introduction -->
+  <div class="section">
+    <div class="section-number">Section 01</div>
+    <h2>Introduction</h2>
+    <p>
+      Welcome to EpicVerse, developed by <strong>Kriyora Concepts Pvt Ltd.</strong> ("we", "our", or "us"). This Privacy Policy explains how we collect, use, share, and protect your personal information when you use the EpicVerse mobile application (the "App"), available on the Google Play Store and Apple App Store.
+    </p>
+    <p>
+      By downloading or using EpicVerse, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the App.
+    </p>
+    <p>
+      Our primary users are based in <strong>India</strong>. Where applicable, we also comply with the <strong>Digital Personal Data Protection Act, 2023 (DPDPA)</strong> and applicable provisions of the <strong>Information Technology Act, 2000</strong>.
+    </p>
+  </div>
 
-  <h3>2.1 Information You Provide</h3>
-  <ul>
-    <li><strong>Account information:</strong> email address, display name, and profile picture when you register or sign in via Google or other third-party authentication providers.</li>
-    <li><strong>User-generated content:</strong> text, voice recordings, images, or other content you create or upload within the App.</li>
-    <li><strong>Communications:</strong> messages or feedback you send to us.</li>
-  </ul>
+  <!-- 2. Information We Collect -->
+  <div class="section">
+    <div class="section-number">Section 02</div>
+    <h2>Information We Collect</h2>
 
-  <h3>2.2 Information Collected Automatically</h3>
-  <ul>
-    <li><strong>Device information:</strong> device model, operating system version, unique device identifiers, and mobile network information.</li>
-    <li><strong>Usage data:</strong> features you use, interaction logs, session duration, and in-app actions.</li>
-    <li><strong>Log data:</strong> IP address, app crash reports, and diagnostic information.</li>
-    <li><strong>Bluetooth data:</strong> device scanning and connection metadata when using Bluetooth-enabled features (e.g., companion device pairing).</li>
-  </ul>
+    <h3>2.1 Information You Provide</h3>
+    <ul>
+      <li><strong>Account information:</strong> Email address, display name, and profile picture when you register or sign in via Google or other supported authentication providers.</li>
+      <li><strong>User-generated content:</strong> Text, images, or other content you create or upload within the App.</li>
+      <li><strong>Voice input:</strong> Audio recorded when you actively use the voice companion feature. See Section 3 for how this is handled.</li>
+      <li><strong>Communications:</strong> Messages or feedback you send directly to us.</li>
+    </ul>
 
-  <h3>2.3 Permissions We Request</h3>
-  <p>EpicVerse requests the following device permissions to provide its core features:</p>
-  <ul>
-    <li><strong>Camera:</strong> To capture images for use within the App.</li>
-    <li><strong>Microphone / Audio Recording:</strong> To enable voice input, voice commands, or audio-based interactions within EpicVerse.</li>
-    <li><strong>Storage / Media:</strong> To read and save images or media files on your device.</li>
-    <li><strong>Bluetooth:</strong> To discover and connect to supported companion devices.</li>
-    <li><strong>Internet &amp; Network State:</strong> To sync content, authenticate users, and communicate with our servers.</li>
-  </ul>
-  <p>You may manage these permissions at any time in your device settings. Denying certain permissions may limit App functionality.</p>
+    <h3>2.2 Information Collected Automatically</h3>
+    <ul>
+      <li><strong>Device information:</strong> Device model, operating system version, unique device identifiers, and mobile network information.</li>
+      <li><strong>Usage data:</strong> Features you use, session duration, interaction logs, and in-app actions.</li>
+      <li><strong>Log data:</strong> IP address, crash reports, and diagnostic information to help us fix issues.</li>
+      <li><strong>Bluetooth metadata:</strong> Device scanning and connection metadata when using Bluetooth companion-pairing features. We do not collect the content of Bluetooth communications.</li>
+    </ul>
 
-  <h2>3. How We Use Your Information</h2>
-  <p>We use the information we collect to:</p>
-  <ul>
-    <li>Create and manage your account and authenticate your identity via Firebase Authentication.</li>
-    <li>Deliver and personalize the EpicVerse experience, including AI-driven companion interactions and story modes.</li>
-    <li>Process voice input and other media to power in-app features.</li>
-    <li>Analyse usage patterns to improve App performance, content, and features.</li>
-    <li>Communicate with you about updates, support, or promotional offers (with your consent where required).</li>
-    <li>Ensure the security and integrity of the App and detect fraudulent or abusive activity.</li>
-    <li>Comply with applicable legal obligations.</li>
-  </ul>
+    <h3>2.3 Device Permissions</h3>
+    <p>EpicVerse requests the following device permissions:</p>
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Purpose</th>
+          <th>Required?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Camera</td>
+          <td>Capture images for use within the App</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td>Microphone</td>
+          <td>Voice input for AI companion interactions — required to use the voice feature</td>
+          <td>Required</td>
+        </tr>
+        <tr>
+          <td>Storage / Media</td>
+          <td>Read and save images or media files on your device</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td>Bluetooth</td>
+          <td>Discover and connect to supported companion devices</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td>Internet &amp; Network State</td>
+          <td>Sync content, authenticate, and communicate with our servers</td>
+          <td>Required</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="notice warn" style="margin-top:16px;">
+      You may manage all optional permissions at any time in your device settings. Denying optional permissions may limit certain App features but will not affect your core experience.
+    </div>
+  </div>
 
-  <h2>4. How We Share Your Information</h2>
-  <p>We do not sell your personal information. We may share your information with:</p>
-  <ul>
-    <li><strong>Service Providers:</strong> Third-party vendors who assist us in operating the App, including Firebase (Google LLC) for authentication and backend services.</li>
-    <li><strong>Analytics Providers:</strong> Tools that help us understand App usage and performance. Data shared is aggregated or anonymised where possible.</li>
-    <li><strong>Legal Requirements:</strong> If required by law, court order, or governmental authority, or to protect the rights and safety of Kriyora, our users, or the public.</li>
-    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of all or part of our assets, your information may be transferred to the successor entity.</li>
-  </ul>
-  <p>All third-party service providers are contractually required to protect your data and use it only for the purposes we specify.</p>
+  <!-- 3. How We Use Your Information -->
+  <div class="section">
+    <div class="section-number">Section 03</div>
+    <h2>How We Use Your Information</h2>
 
-  <h2>5. Data Retention</h2>
-  <p>
-    We retain your personal information for as long as your account is active or as necessary to provide our services.
-    You may request deletion of your account and associated data at any time by contacting us at the address below.
-    We will respond to deletion requests within 30 days, subject to legal retention obligations.
-  </p>
+    <h3>3.1 General Purposes</h3>
+    <ul>
+      <li>Create and manage your account using Firebase Authentication.</li>
+      <li>Deliver and personalise the EpicVerse experience, including story modes and AI-driven interactions.</li>
+      <li>Analyse usage patterns to improve App performance, features, and content.</li>
+      <li>Communicate with you about updates, support, or promotional offers (with your consent where required).</li>
+      <li>Detect fraudulent or abusive activity and maintain App security.</li>
+      <li>Comply with applicable laws and legal obligations.</li>
+    </ul>
 
-  <h2>6. Data Security</h2>
-  <p>
-    We implement industry-standard technical and organisational measures to protect your information against
-    unauthorised access, alteration, disclosure, or destruction. These include encrypted data transmission (HTTPS/TLS),
-    Firebase security rules, and access controls.
-  </p>
-  <p>
-    However, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee
-    absolute security and encourage you to use strong, unique passwords and to log out of your account when not in use.
-  </p>
+    <h3>3.2 Voice Data &amp; AI Processing — Important</h3>
+    <div class="notice info">
+      When you use the voice companion feature, your voice audio is recorded <strong>only while you actively engage the feature</strong> (not in the background). The audio is transmitted securely to <strong>OpenAI</strong> for real-time processing to generate a response. <strong>OpenAI does not retain your voice data</strong> — it is processed in real-time and immediately discarded. No voice recordings are stored by Kriyora or OpenAI.
+    </div>
+    <p>
+      This processing is governed by OpenAI's API data usage policies. You can review OpenAI's privacy practices at <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">openai.com/policies/privacy-policy</a>.
+    </p>
+  </div>
 
-  <h2>7. Children's Privacy</h2>
-  <p>
-    EpicVerse is not directed to children under the age of 13 (or the applicable age of digital consent in your
-    jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided
-    us with personal information, please contact us immediately and we will take steps to delete such information.
-  </p>
-  <p>Users between 13 and 17 should use the App only with parental consent.</p>
+  <!-- 4. How We Share Your Information -->
+  <div class="section">
+    <div class="section-number">Section 04</div>
+    <h2>How We Share Your Information</h2>
+    <p><strong>We do not sell your personal information to anyone.</strong> We share data only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Firebase (Google LLC):</strong> Provides authentication and backend database services. Data is processed under Google's data processing agreements.</li>
+      <li><strong>OpenAI:</strong> Receives voice audio for real-time AI processing of the voice companion feature only. Data is not retained (see Section 3.2).</li>
+      <li><strong>Analytics Providers:</strong> Aggregated or anonymised usage data to help us understand App performance. No personally identifiable information is shared.</li>
+      <li><strong>Legal obligations:</strong> Where required by law, court order, or governmental authority in India or other applicable jurisdictions.</li>
+      <li><strong>Business transfers:</strong> In the event of a merger, acquisition, or asset sale, your data may be transferred to a successor entity under equivalent privacy protections.</li>
+    </ul>
+    <p>All third-party service providers are bound by data processing agreements and are permitted to use your information only for the purposes we specify.</p>
+  </div>
 
-  <h2>8. Your Rights and Choices</h2>
-  <p>Depending on your location, you may have the following rights regarding your personal information:</p>
-  <ul>
-    <li><strong>Access:</strong> Request a copy of the personal information we hold about you.</li>
-    <li><strong>Correction:</strong> Request that we correct inaccurate or incomplete information.</li>
-    <li><strong>Deletion:</strong> Request that we delete your personal information, subject to certain exceptions.</li>
-    <li><strong>Opt-out:</strong> Opt out of marketing communications at any time by following the unsubscribe instructions in our emails or contacting us directly.</li>
-    <li><strong>Data Portability:</strong> Request that we provide your data in a portable, machine-readable format.</li>
-  </ul>
-  <p>
-    To exercise any of these rights, please contact us at the address listed in Section 11. We will respond within
-    the timeframe required by applicable law.
-  </p>
+  <!-- 5. Data Retention -->
+  <div class="section">
+    <div class="section-number">Section 05</div>
+    <h2>Data Retention</h2>
+    <p>We retain your personal information for as long as your account is active or as necessary to provide our services. Specific retention periods:</p>
+    <ul>
+      <li><strong>Voice audio:</strong> Not retained. Processed in real-time and discarded immediately.</li>
+      <li><strong>Account data:</strong> Retained until you request deletion or your account is inactive for an extended period.</li>
+      <li><strong>Log and diagnostic data:</strong> Retained for up to 90 days for debugging and security purposes.</li>
+      <li><strong>Legal obligations:</strong> Certain data may be retained longer where required by Indian law or regulatory requirements.</li>
+    </ul>
+    <p>You may request deletion of your account and associated data at any time by contacting us. We will process deletion requests within <strong>30 days</strong>.</p>
+  </div>
 
-  <h2>9. Third-Party Links and Services</h2>
-  <p>
-    The App may integrate with or link to third-party services (e.g., Google Sign-In). These services have their own
-    privacy policies and we are not responsible for their data practices. We encourage you to review the privacy
-    policies of any third-party services you use in connection with EpicVerse.
-  </p>
+  <!-- 6. Data Security -->
+  <div class="section">
+    <div class="section-number">Section 06</div>
+    <h2>Data Security</h2>
+    <p>We implement industry-standard security measures to protect your information, including:</p>
+    <ul>
+      <li><strong>Encryption in transit:</strong> All data transmitted between the App and our servers uses HTTPS/TLS encryption.</li>
+      <li><strong>Encryption at rest:</strong> Data stored in Firebase is encrypted at rest by Google's infrastructure.</li>
+      <li><strong>Access controls:</strong> Firebase security rules and role-based access controls restrict who can access your data.</li>
+      <li><strong>Minimal data collection:</strong> We collect only what is necessary to provide the App's features.</li>
+    </ul>
+    <p>While no method of transmission over the internet is 100% secure, we continuously review and update our security practices. We encourage you to use a strong, unique password and to log out when not using the App.</p>
+    <p>In the event of a data breach that affects your rights or interests, we will notify you as required under applicable Indian law.</p>
+  </div>
 
-  <h2>10. International Data Transfers</h2>
-  <p>
-    Your information may be transferred to and processed in countries other than your own, including the United States,
-    where our service providers (such as Google Firebase) operate. These countries may have different data protection
-    laws. Where required, we ensure appropriate safeguards are in place for such transfers, including standard
-    contractual clauses.
-  </p>
+  <!-- 7. Children's Privacy -->
+  <div class="section">
+    <div class="section-number">Section 07</div>
+    <h2>Children's Privacy</h2>
+    <p>EpicVerse is <strong>not directed to children under the age of 13</strong>. We do not knowingly collect personal information from children under 13.</p>
+    <p>Users between the ages of 13 and 17 should use the App only with the knowledge and assistance of a parent or legal guardian.</p>
+    <div class="notice warn">
+      If you believe a child under 13 has provided us with personal information, please contact us immediately at support@kriyora.com. We will promptly take steps to delete such information.
+    </div>
+  </div>
 
-  <h2>11. Changes to This Privacy Policy</h2>
-  <p>
-    We may update this Privacy Policy from time to time. We will notify you of material changes by updating the
-    "Effective Date" at the top of this policy and, where appropriate, by providing notice within the App or via email.
-    Your continued use of EpicVerse after any changes constitutes your acceptance of the updated policy.
-  </p>
+  <!-- 8. Your Rights -->
+  <div class="section">
+    <div class="section-number">Section 08</div>
+    <h2>Your Rights and Choices</h2>
+    <p>Under applicable Indian privacy law and general best practices, you have the following rights regarding your personal information:</p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="right-title">Access</div>
+        <div class="right-desc">Request a copy of the personal data we hold about you</div>
+      </div>
+      <div class="right-card">
+        <div class="right-title">Correction</div>
+        <div class="right-desc">Request that we correct inaccurate or incomplete information</div>
+      </div>
+      <div class="right-card">
+        <div class="right-title">Deletion</div>
+        <div class="right-desc">Request deletion of your account and personal data</div>
+      </div>
+      <div class="right-card">
+        <div class="right-title">Opt-out</div>
+        <div class="right-desc">Opt out of marketing emails via the unsubscribe link or by contacting us</div>
+      </div>
+      <div class="right-card">
+        <div class="right-title">Portability</div>
+        <div class="right-desc">Request your data in a portable, machine-readable format</div>
+      </div>
+      <div class="right-card">
+        <div class="right-title">Withdraw Consent</div>
+        <div class="right-desc">Withdraw consent for optional processing at any time</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;">To exercise any of these rights, contact us at <a href="mailto:support@kriyora.com" style="color:var(--accent);">support@kriyora.com</a>. We will respond within the timeframe required by applicable law (generally 30 days).</p>
+  </div>
 
-  <h2>12. Contact Us</h2>
-  <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:</p>
-  <div class="contact-block">
-    <p><strong>Kriyora Concepts Pvt Ltd.</strong></p>
-    <p>Email: <a href="mailto:support@kriyora.com">support@kriyora.com</a></p>
-    <p>Website: <a href="https://kriyora.com" target="_blank" rel="noopener noreferrer">https://kriyora.com</a></p>
-    <p>Address: Unit 101 Oxford Towers, HAL Old Airport Rd, H.A.L II Stage, Bangalore North, Bangalore – 560008, Karnataka</p>
+  <!-- 9. Third-Party Services -->
+  <div class="section">
+    <div class="section-number">Section 09</div>
+    <h2>Third-Party Services</h2>
+    <p>EpicVerse integrates with the following third-party services that have their own privacy policies:</p>
+    <ul>
+      <li><strong>Google Sign-In &amp; Firebase</strong> — Authentication and backend. Governed by Google's Privacy Policy.</li>
+      <li><strong>OpenAI API</strong> — Real-time voice processing for the AI companion feature. Governed by OpenAI's API privacy policy.</li>
+    </ul>
+    <p>We are not responsible for the privacy practices of these third-party services. We encourage you to review their respective privacy policies before using features that rely on them.</p>
+  </div>
+
+  <!-- 10. International Data Transfers -->
+  <div class="section">
+    <div class="section-number">Section 10</div>
+    <h2>International Data Transfers</h2>
+    <p>Our primary users are in India. However, some of our service providers — including Google Firebase and OpenAI — process data in the United States and other countries. These countries may have different data protection laws than India.</p>
+    <p>Where such transfers occur, we ensure appropriate safeguards are in place through contractual protections with our service providers. Voice data sent to OpenAI is not retained and is processed only in real-time, minimising the risk of cross-border data exposure.</p>
+  </div>
+
+  <!-- 11. Changes to This Policy -->
+  <div class="section">
+    <div class="section-number">Section 11</div>
+    <h2>Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p>
+    <ul>
+      <li>Updating the "Effective Date" at the top of this page.</li>
+      <li>Displaying a notice within the App.</li>
+      <li>Sending an email notification where appropriate and where required by law.</li>
+    </ul>
+    <p>Your continued use of EpicVerse after any changes take effect constitutes your acceptance of the updated Privacy Policy. If you do not agree to the updated terms, you should stop using the App and may request deletion of your account.</p>
+  </div>
+
+  <!-- 12. Contact -->
+  <div class="section">
+    <div class="section-number">Section 12</div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please reach out to us:</p>
+    <div class="contact-block">
+      <p><strong>Kriyora Concepts Pvt Ltd.</strong></p>
+      <p>Email: <a href="mailto:support@kriyora.com">support@kriyora.com</a></p>
+      <p>Website: <a href="https://kriyora.com" target="_blank" rel="noopener noreferrer">https://kriyora.com</a></p>
+      <p>Address: Unit 101 Oxford Towers, HAL Old Airport Rd, H.A.L II Stage, Bangalore North, Bangalore – 560008, Karnataka, India</p>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color:var(--muted);">We aim to respond to all privacy-related requests within <strong>30 days</strong>.</p>
   </div>
 
   <footer>
-    <p>© 2026 Kriyora. All rights reserved.</p>
+    <p>© 2026 Kriyora Concepts Pvt Ltd. All rights reserved.</p>
+    <p style="margin-top:6px;">EpicVerse is available on the Google Play Store and Apple App Store.</p>
   </footer>
 
+</div>
 </body>
 </html>
